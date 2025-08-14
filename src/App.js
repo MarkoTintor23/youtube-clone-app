@@ -1,5 +1,33 @@
-function App() {
-  return <p>youtube</p>;
-}
+const VIDEOS = [
+  {
+    id: 1,
+    title: "How to learn React",
+    url: "https://www.youtube.com/watch?v=s2skans2dP4&t=50s",
+    cover:
+      "https://i.ytimg.com/vi/Ihy0QziLDf0/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBjz7lHuZZP4XzY-68l-gEI62KCtA",
+  },
+  {
+    id: 1,
+    title: "How to learn CSS",
+    url: "https://www.youtube.com/watch?v=wRNinF7YQqQ",
+    cover:
+      "https://i.ytimg.com/vi/wRNinF7YQqQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLD7OQC2Rt6_U-eVbZlqN2ImnWwUsA",
+  },
+];
+
+const App = () => {
+  return (
+    <>
+      {VIDEOS.map((video) => {
+        return (
+          <a href={video.url} target="_blank">
+            <img alt="cover" src={video.cover} />
+            <h3>{video.title}</h3>
+          </a>
+        );
+      })}
+    </>
+  );
+};
 
 export default App;
